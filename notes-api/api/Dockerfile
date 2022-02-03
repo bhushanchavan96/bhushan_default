@@ -7,10 +7,10 @@ RUN apk add --no-cache python2 make g++
 WORKDIR /app
 
 COPY ./package.json .
-RUN npm install --only=prod
+RUN npm install
 
 # stage two
-FROM node:lts-alpine
+FROM node:lts-alpine 
 
 EXPOSE 3000
 ENV NODE_ENV=production
